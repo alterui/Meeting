@@ -1,0 +1,7 @@
+2019-07-21 11:28:10.305  INFO 11219 --- [Thread-72] ConfigServletWebServerApplicationContext : Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@6150c3ec: startup date [Sat Jul 20 22:16:22 CST 2019]; root of context hierarchy
+2019-07-21 11:28:10.306  INFO 11219 --- [ZkClient-EventThread-89-localhost:2181] org.I0Itec.zkclient.ZkEventThread        : Terminate ZkClient event thread.
+2019-07-21 11:28:10.314  INFO 11219 --- [DubboShutdownHook] org.apache.zookeeper.ZooKeeper           : Session: 0x10004b250a50006 closed
+2019-07-21 11:28:10.314  INFO 11219 --- [DubboZkclientConnector-EventThread] org.apache.zookeeper.ClientCnxn          : EventThread shut down for session: 0x10004b250a50006
+2019-07-21 11:28:10.318  INFO 11219 --- [Thread-72] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2019-07-21 11:28:10.319  INFO 11219 --- [Thread-72] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans
+2019-07-21 11:28:10.323  INFO 11219 --- [Thread-72] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
