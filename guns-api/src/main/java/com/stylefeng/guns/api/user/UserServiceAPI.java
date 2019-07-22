@@ -1,10 +1,13 @@
 package com.stylefeng.guns.api.user;
 
+import com.stylefeng.guns.api.user.vo.UserInfoModel;
+import com.stylefeng.guns.api.user.vo.UserModel;
+
 /**
  * @author liurui
  * @time 2019-07-20 19:05
  */
-public interface UserAPI {
+public interface UserServiceAPI {
 
 
     /**

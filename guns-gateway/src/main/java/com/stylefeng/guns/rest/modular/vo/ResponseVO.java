@@ -1,8 +1,5 @@
 package com.stylefeng.guns.rest.modular.vo;
 
-import com.sun.org.apache.regexp.internal.RE;
-
-import javax.xml.ws.Response;
 
 /**
  * 用户模块VO类
