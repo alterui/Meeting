@@ -1,12 +1,16 @@
 package com.stylefeng.guns.rest.modular.vo;
 
 
+import lombok.Data;
+
 /**
  * 用户模块VO类
  *
  * @author liurui
  * @time 2019-07-21 10:42
  */
+
+@Data
 public class ResponseVO<T> {
 
     //报文返回状态【0-成功，1-业务失败，999-系统异常】
@@ -17,6 +21,9 @@ public class ResponseVO<T> {
 
     //返回数据实体
     private T data;
+
+    //图片前缀
+    private String imgPre;
 
 
     //使用单例模式，禁止外部建立实体
@@ -39,6 +46,26 @@ public class ResponseVO<T> {
 
         return responseVO;
     }
+
+
+
+    /**
+     * 成功返回的报文
+     * @param t
+     * @param <T>
+     * @return
+     */
+    public static<T> ResponseVO success(String imgPre,T t) {
+
+        ResponseVO responseVO = new ResponseVO();
+        responseVO.setStatus(0);
+        responseVO.setImgPre(imgPre);
+        responseVO.setData(t);
+
+
+        return responseVO;
+    }
+
 
 
     /**
@@ -82,27 +109,5 @@ public class ResponseVO<T> {
         return responseVO;
     }
 
-    public int getStatus() {
-        return status;
-    }
 
-    public void setStatus(int status) {
-        this.status = status;
-    }
-
-    public String getMsg() {
-        return msg;
-    }
-
-    public void setMsg(String msg) {
-        this.msg = msg;
-    }
-
-    public T getData() {
-        return data;
-    }
-
-    public void setData(T data) {
-        this.data = data;
-    }
 }
