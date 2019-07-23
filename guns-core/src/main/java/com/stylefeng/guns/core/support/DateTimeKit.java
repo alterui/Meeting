@@ -12,6 +12,7 @@ import java.util.Locale;
  * 时间工具类
  * @author xiaoleilu
  */
+@SuppressWarnings("ALL")
 public class DateTimeKit {
 	/** 毫秒 */
 	public final static long MS = 1;

@@ -56,6 +56,7 @@ public class WafKit {
 			rlt = scriptPattern.matcher(rlt).replaceAll("");*/
 
 			// Remove any lonesome </script> tag
+			//noinspection AlibabaAvoidPatternCompileInMethod
 			scriptPattern = Pattern.compile("</script>", Pattern.CASE_INSENSITIVE);
 			rlt = scriptPattern.matcher(rlt).replaceAll("");
 
