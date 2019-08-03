@@ -17,6 +17,7 @@
         <module>guns-api</module>
         <module>guns-user</module>
         <module>guns-film</module>
+        <module>guns-alipay</module>
     </modules>
 
     <parent>
@@ -47,6 +48,7 @@
         <jwt.version>0.9.0</jwt.version>
         <hutool.version>4.1.1</hutool.version>
         <lombok.version>1.18.4</lombok.version>
+        <orika-core.version>1.5.4</orika-core.version>
     </properties>
 
     <dependencyManagement>
@@ -185,6 +187,14 @@
                 <version>${lombok.version}</version>
                 <scope>provided</scope>
             </dependency>
+
+
+            <dependency>
+                <groupId>ma.glasnost.orika</groupId>
+                <artifactId>orika-core</artifactId>
+                <version>${orika-core.version}</version>
+            </dependency>
+
 
         </dependencies>
     </dependencyManagement>

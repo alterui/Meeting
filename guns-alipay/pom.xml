@@ -4,12 +4,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.stylefeng.guns</groupId>
-    <artifactId>guns-user</artifactId>
+    <artifactId>guns-alipay</artifactId>
     <version>0.0.1</version>
     <packaging>jar</packaging>
 
-    <name>guns-user</name>
-    <description>Meeting院线的API用户服务</description>
+    <name>guns-alipay</name>
+    <description>Meeting院线的支付宝支付模块</description>
 
     <parent>
         <groupId>com.stylefeng</groupId>
@@ -61,13 +61,6 @@
             <artifactId>zkclient</artifactId>
             <version>0.11</version>
         </dependency>
-
-        <dependency>
-            <groupId>ma.glasnost.orika</groupId>
-            <artifactId>orika-core</artifactId>
-        </dependency>
-
-
 
 
 

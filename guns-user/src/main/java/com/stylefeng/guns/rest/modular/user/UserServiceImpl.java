@@ -1,12 +1,16 @@
 package com.stylefeng.guns.rest.modular.user;
 
 import com.alibaba.dubbo.config.annotation.Service;
+import com.fasterxml.jackson.databind.MapperFeature;
 import com.stylefeng.guns.api.user.UserServiceAPI;
 import com.stylefeng.guns.api.user.vo.UserInfoModel;
 import com.stylefeng.guns.api.user.vo.UserModel;
 import com.stylefeng.guns.core.util.MD5Util;
 import com.stylefeng.guns.rest.common.persistence.dao.MoocUserTMapper;
 import com.stylefeng.guns.rest.common.persistence.model.MoocUserT;
+import ma.glasnost.orika.MapperFacade;
+import ma.glasnost.orika.MapperFactory;
+import ma.glasnost.orika.impl.DefaultMapperFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -19,9 +23,11 @@ import org.springframework.stereotype.Component;
 @Service(interfaceClass = UserServiceAPI.class)
 public class UserServiceImpl implements UserServiceAPI {
 
-
     @Autowired
     private MoocUserTMapper moocUserTMapper;
+
+    private MapperFactory mapperFactory = new DefaultMapperFactory.Builder().build();
+    private MapperFacade mapper = mapperFactory.getMapperFacade();
 
     @Override
     public int login(String username, String password) {
@@ -45,14 +51,8 @@ public class UserServiceImpl implements UserServiceAPI {
     @Override
     public boolean register(UserModel userModel) {
 
-        MoocUserT moocUserT = new MoocUserT();
-        moocUserT.setUserName(userModel.getUsername());
-        moocUserT.setUserPwd(MD5Util.encrypt(userModel.getPassword()));
-        moocUserT.setEmail(userModel.getEmail());
-        moocUserT.setUserPhone(userModel.getPhone());
-        moocUserT.setAddress(userModel.getAddress());
-
-        Integer count = moocUserTMapper.insert(moocUserT);
+        MoocUserT map = mapper.map(userModel, MoocUserT.class);
+        Integer count = moocUserTMapper.insert(map);
         if (count > 0) {
             return true;
         } else {

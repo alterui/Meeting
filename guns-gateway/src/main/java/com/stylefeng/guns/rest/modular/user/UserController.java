@@ -31,12 +31,12 @@ public class UserController {
      */
     @RequestMapping(value = "register",method = RequestMethod.POST)
     public ResponseVO register(UserModel userModel) {
-        if (userModel.getUsername() == null || userModel.getUsername().trim().length() == 0) {
+        if (userModel.getUser_nameing() == null || userModel.getUser_nameing().trim().length() == 0) {
             return ResponseVO.serviceFail("用户名不能为空");
         }
 
 
-        if (userModel.getPassword() == null || userModel.getPassword().trim().length() == 0) {
+        if (userModel.getUserPwd() == null || userModel.getUserPwd().trim().length() == 0) {
             return ResponseVO.serviceFail("密码不能为空");
         }
 

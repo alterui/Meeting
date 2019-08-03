@@ -13,13 +13,13 @@ import java.io.Serializable;
 @Data
 public class UserModel implements Serializable {
     //用户名
-    private String username;
+    private String user_nameing;
     //密码
-    private String password;
+    private String userPwd;
     //邮箱
     private String email;
     //电话
-    private String phone;
+    private String userPhone;
     //地址
     private String address;
 
